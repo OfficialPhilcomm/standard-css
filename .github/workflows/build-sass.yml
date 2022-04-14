@@ -17,3 +17,8 @@ jobs:
         with:
           source: standard.sass
           destination: /tmp/standard.css
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: standard-css
+          path: /tmp/standard.css
