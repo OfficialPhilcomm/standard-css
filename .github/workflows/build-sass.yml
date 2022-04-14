@@ -1,0 +1,19 @@
+name: Build sass
+on:
+  push:
+    branches:
+     - master
+
+jobs:
+  sass-to-css:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Compile SASS to CSS
+        uses: gha-utilities/sass-build@v0.4.9
+        with:
+          source: standard.sass
+          destination: /tmp/standard.css
